@@ -17,7 +17,10 @@ export default function NoteList({newNote, onDeleteNotes}) {
     return <div key={note.id} 
          style={{ backgroundColor: `${selectColor}` }}
          className={`rounded-xl w-[300px] h-[150px] py-[15px] px-[20px] relative
-         overflow-y-scroll [scrollbar-width:none] -ms-overflow-style:none] [&::-webkit-scrollbar]:hidden `}>
+         overflow-y-scroll [scrollbar-width:none] -ms-overflow-style:none] [&::-webkit-scrollbar]:hidden 
+         sm:w-[250px]
+         sm:h-[120px]
+         `}>
           <Noteitem 
           title={note.title}
           text={note.text}
@@ -30,7 +33,8 @@ export default function NoteList({newNote, onDeleteNotes}) {
 
   return (
     <>
-    <div className='flex flex-wrap my-[80px] mx-[50px] gap-[50px]'>
+    <div className='flex flex-wrap sm:justify-center my-[80px] px-2  gap-4
+    sm:mt-[40px]'>
       {renderingNote()}
     </div>
     </>

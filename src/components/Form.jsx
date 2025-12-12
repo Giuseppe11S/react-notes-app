@@ -42,7 +42,7 @@ export default function Form({newNote, setNewNote, onAddNotes, onDeleteNotes}) {
         className="flex  items-start flex-col
         border rounded-lg border-gray-200 pl-[40px] pt-[40px] pr-[40px] bg-white">
         {isOpen && <input 
-        className="w-[600px] mb-[20px] text-[15px] p-[10px] focus:outline 
+        className="w-full md:w-[600px] sm:w-[400px] mb-[20px] text-[15px] p-[10px] focus:outline 
         focus:rounded focus:outline-yellow-200 focus:outline-2 cursor-pointer"
         type="text" 
         placeholder="Title (optional)"
@@ -50,7 +50,7 @@ export default function Form({newNote, setNewNote, onAddNotes, onDeleteNotes}) {
         onChange={(e) => setTitle(e.target.value)}
         />}
         <textarea
-        className="w-[600px] resize-none mb-[30px] text-[15px] p-[10px]
+        className="w-full sm:w-[400px] md:w-[600px] resize-none mb-[30px] text-[15px] p-[10px]
         focus:outline focus:rounded focus:outline-yellow-200 focus:outline-2
         cursor-pointer"
         placeholder="Write your note..."
@@ -61,7 +61,7 @@ export default function Form({newNote, setNewNote, onAddNotes, onDeleteNotes}) {
         >
         </textarea>
 
-         <div className="flex justify-end w-full pr-[25px] pb-[30px] gap-4">
+         <div className="flex justify-end w-full pr-[2px] pb-[30px] gap-4">
           {isOpen && <button type="button" className="hover:bg-blue-100 rounded-lg e transition py-[5px] px-[10px] cursor-pointer"
           onClick={() => {
             closeButton()
@@ -79,6 +79,7 @@ export default function Form({newNote, setNewNote, onAddNotes, onDeleteNotes}) {
             <CirclePlus
             className="text-yellow-500"/>
           </button>
+          {}
         </div>
       </form>
       </div>
