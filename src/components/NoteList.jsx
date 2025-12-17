@@ -16,10 +16,12 @@ export default function NoteList({newNote, onDeleteNotes}) {
     const selectColor = randomColor[Math.floor(Math.random()*randomColor.length)]
     return <div key={note.id} 
          style={{ backgroundColor: `${selectColor}` }}
-         className={`rounded-xl w-[300px] h-[150px] py-[15px] px-[20px] relative
-         overflow-y-scroll [scrollbar-width:none] -ms-overflow-style:none] [&::-webkit-scrollbar]:hidden 
-         sm:w-[250px]
-         sm:h-[120px]
+         className={`rounded-xl h-[150px] py-[15px] px-[20px] relative shrink-0
+         overflow-y-scroll [scrollbar-width:none] -ms-overflow-style:none] [&::-webkit-scrollbar]:hidden
+         <!-- MOBILE -->
+         w-[45%]
+         <!-- Desktop -->
+         md:w-1/3
          `}>
           <Noteitem 
           title={note.title}
@@ -33,8 +35,10 @@ export default function NoteList({newNote, onDeleteNotes}) {
 
   return (
     <>
-    <div className='flex flex-wrap sm:justify-center my-[80px] px-2  gap-4
-    sm:mt-[40px]'>
+    <div className='flex flex-wrap justify-center my-[80px] px-2 gap-4
+    <!-- MOBILE -->
+    sm:mt-[40px]
+    <!-- DESKTOP -->'>
       {renderingNote()}
     </div>
     </>

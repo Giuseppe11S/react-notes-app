@@ -40,8 +40,9 @@ export default function Form({newNote, setNewNote, onAddNotes, onDeleteNotes}) {
     <div className="cnt-nav flex justify-center mt-[40px]">
       <form onSubmit={handleSubmit}
         className="flex  items-start flex-col
-        border rounded-lg border-gray-200 pl-[40px] pt-[40px] pr-[40px] bg-white">
-        {isOpen && <input 
+        border rounded-lg border-gray-200 pl-[40px] pt-[40px] pr-[40px] bg-white sm:pt-[20px] ">
+        {isOpen && 
+        <input 
         className="w-full md:w-[600px] sm:w-[400px] mb-[20px] text-[15px] p-[10px] focus:outline 
         focus:rounded focus:outline-yellow-200 focus:outline-2 cursor-pointer"
         type="text" 
@@ -50,9 +51,14 @@ export default function Form({newNote, setNewNote, onAddNotes, onDeleteNotes}) {
         onChange={(e) => setTitle(e.target.value)}
         />}
         <textarea
-        className="w-full sm:w-[400px] md:w-[600px] resize-none mb-[30px] text-[15px] p-[10px]
+        className="w-full resize-none text-[15px] p-[10px]
         focus:outline focus:rounded focus:outline-yellow-200 focus:outline-2
-        cursor-pointer"
+        cursor-pointer
+        <!-- Mobile -->
+        mb-[5px]
+        sm:w-[400px]
+        <!-- Desktop -->
+        md:w-[600px] md:mb-[30px]"
         placeholder="Write your note..."
         value={text}
         onChange={(e) => {
@@ -61,7 +67,12 @@ export default function Form({newNote, setNewNote, onAddNotes, onDeleteNotes}) {
         >
         </textarea>
 
-         <div className="flex justify-end w-full pr-[2px] pb-[30px] gap-4">
+         <div className="flex justify-end w-full pr-[2px] gap-4 
+         <!--Mobile-->
+         pb-[15px]
+         sm:pb-[15x]
+         <!--Desktop-->
+         md:pb-[30px]">
           {isOpen && <button type="button" className="hover:bg-blue-100 rounded-lg e transition py-[5px] px-[10px] cursor-pointer"
           onClick={() => {
             closeButton()
